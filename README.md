@@ -53,10 +53,10 @@ cd <nombre-del-repositorio>
 
 ### Instalación de Dependencias
 
-Este proyecto utiliza `pandas` para el manejo de archivos CSV en uno de los ejemplos. Para instalarlo, ejecuta:
+Este proyecto utiliza `pandas` y `pytest` para el manejo de archivos CSV en uno de los ejemplos. Para instalarlo, ejecuta:
 
 ```bash
-pip install pandas
+uv sync
 ```
 
 ## 🛠️ Uso
