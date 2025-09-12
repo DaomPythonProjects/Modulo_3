@@ -1,0 +1,45 @@
+[project]
+name = "modulo-3"
+version = "0.1.0"
+description = "Ejemplos de Codigo del Módulo 3 del Curso de Python"
+authors = [
+    { name = "Diego Ojeda", email = "daom89@gmail.com" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.13"
+dependencies = [
+    "notebook>=7.4.5",
+    "pandas>=2.3.2",
+    "pytest>=8.4.2",
+    "pytest-mock>=3.15.0",
+    "rich>=14.1.0",
+]
+[project.urls]
+homepage = "https://github.com/DaomPythonProjects/Modulo_3"
+repository = "https://github.com/DaomPythonProjects/Modulo_3"
+documentation = "https://github.com/DaomPythonProjects/Modulo_3/wiki"
+
+[tool.pytest.ini_options]
+# Directorios de búsqueda de pruebas. Por defecto es el directorio actual.
+# Aquí se especifica que solo busque en el directorio 'tests'.
+testpaths = "tests"
+
+# Opciones de verbosidad (más detalles en la salida).
+addopts = "-v"
+
+# Ignora directorios específicos.
+# Por ejemplo, si usas entornos virtuales dentro del proyecto.
+norecursedirs = [
+    ".git",
+    "venv",
+    ".venv"
+]
+
+# Puedes definir tus propios marcadores para agrupar pruebas.
+# Útil para ejecutar solo un subconjunto de pruebas.
+# Por ejemplo, `pytest -m "slow"` para ejecutar solo las pruebas lentas.
+markers = [
+    "slow: marca las pruebas que tardan mucho en ejecutarse",
+    "integration: marca las pruebas de integración"
+]
