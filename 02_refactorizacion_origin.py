@@ -3,7 +3,9 @@ print("--- Bienvenido al sistema de validación de entradas ---")
 # --- BLOQUE 1: OBTENER DATOS ---
 try:
     edad = int(input("Por favor, introduce tu edad: "))
-    tipo_entrada = input("¿Qué tipo de entrada tienes (VIP, General o Estudiante)?: ").upper()
+    tipo_entrada = input(
+        "¿Qué tipo de entrada tienes (VIP, General o Estudiante)?: "
+    ).upper()
 except ValueError:
     print("Error: La edad debe ser un número válido.")
     exit()
@@ -23,7 +25,9 @@ else:
         case "GENERAL":
             mensaje_acceso = "Acceso concedido a la zona general. ¡Disfruta del evento!"
         case "ESTUDIANTE":
-            mensaje_acceso = "Acceso concedido. Recuerda mostrar tu carné de estudiante."
+            mensaje_acceso = (
+                "Acceso concedido. Recuerda mostrar tu carné de estudiante."
+            )
         case _:
             mensaje_acceso = "Error: El tipo de entrada no es válido."
 
@@ -31,5 +35,9 @@ else:
 
     # --- BLOQUE 4: MENSAJE ADICIONAL ---
     if mensaje_acceso.startswith("Acceso"):
-        mensaje_bebida = "Pasa a la barra por una bebida de cortesía." if tipo_entrada == "VIP" else "Puedes comprar bebidas en la barra."
+        mensaje_bebida = (
+            "Pasa a la barra por una bebida de cortesía."
+            if tipo_entrada == "VIP"
+            else "Puedes comprar bebidas en la barra."
+        )
         print(mensaje_bebida)

@@ -1,0 +1,96 @@
+{
+  // Le dice a VS Code que use Ruff para todo
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit"
+    }
+  },
+  // Habilita el soporte de testing con pytest
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "tests" // Le dice a pytest que busque los tests en la carpeta 'tests'
+  ],
+  // Define explícitamente el intérprete para evitar ambigüedades 
+  // La ruta cambia ligeramente entre Windows y Linux/macOS
+  //"python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python", // Para Linux/macOS
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe", // Para Windows
+  // Mejora el autocompletado y el análisis de código
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.completeFunctionParens": true,
+  // Configuraciones adicionales para mejorar la experiencia de desarrollo
+  "editor.formatOnPaste": true,
+  "editor.tabSize": 4,
+  // Asegura que todos los archivos terminen con una línea nueva y usen LF
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  // Oculta archivos y carpetas irrelevantes del explorador de archivos
+  "files.exclude": {
+    "**/.git": true,
+    "**/.idea": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true
+  },
+  // Excluye las mismas carpetas de los resultados de búsqueda
+  "search.exclude": {
+    "**/.idea": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true
+  },
+  // Configuraciones de color para un tema basado en los colores de Python
+  "workbench.colorCustomizations": {
+    // --- Barra de Actividades (iconos a la izquierda) ---
+    "activityBar.background": "#306998", // Azul oscuro de Python
+    "activityBar.foreground": "#E7E7E7", // Texto claro para contraste
+    "activityBar.inactiveForeground": "#FFFFFF90", // Texto inactivo un poco transparente
+    "activityBar.activeBackground": "#306998", // Mismo fondo al estar activo
+    "activityBar.activeBorder": "#FFD43B", // Borde amarillo para resaltar el ícono activo
+    // --- Insignias (notificaciones en los iconos) ---
+    "activityBarBadge.background": "#FFD43B", // Fondo amarillo
+    "activityBarBadge.foreground": "#15202B", // Texto oscuro para que resalte en el amarillo
+    // --- Barra de Título (superior) ---
+    "titleBar.activeBackground": "#306998", // Azul oscuro
+    "titleBar.activeForeground": "#E7E7E7", // Texto claro
+    "titleBar.inactiveBackground": "#30699899", // Un poco transparente cuando no está en foco
+    // --- Barra de Estado (inferior) ---
+    "statusBar.background": "#306998", // Azul oscuro
+    "statusBar.foreground": "#E7E7E7", // Texto claro
+    "statusBarItem.hoverBackground": "#3776AB", // Un azul un poco más claro al pasar el ratón
+    // --- Pestañas de Archivos ---
+    "tab.activeBorder": "#FFD43B", // Borde inferior amarillo en la pestaña activa
+    // --- Bordes ---
+    "sash.hoverBorder": "#FFD43B" // Borde amarillo al mover paneles
+  },
+  "peacock.color": "#306998", // Para que el plugin Peacock use el mismo color base
+  // --- Editor de Texto ---
+  "editor.fontFamily": "JetBrains Mono, Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.rulers": [ // Dibuja una regla vertical en la columna 99 para no exceder el largo de línea
+    99
+  ],
+  "editor.wordWrap": "on",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line",
+  // --- Apariencia y UI ---
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "editor.minimap.enabled": true,
+  "explorer.compactFolders": true,
+  // --- Productividad ---
+  "breadcrumbs.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+}

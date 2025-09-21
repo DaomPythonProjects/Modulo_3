@@ -1,9 +1,5 @@
 # --- 1. Escribiendo un archivo desde cero con el modo 'w' ---
-lineas_a_escribir = [
-    "Manzanas\n",
-    "Peras\n",
-    "Naranjas\n"
-]
+lineas_a_escribir = ["Manzanas\n", "Peras\n", "Naranjas\n"]
 
 # El archivo "lista_compras.txt" se creará (o se sobrescribirá si ya existe)
 with open("lista_compras.txt", "w") as archivo:
@@ -29,7 +25,7 @@ print("\n--- Leyendo línea por línea con .readline() ---")
 with open("lista_compras.txt", "r") as archivo:
     linea1 = archivo.readline()
     linea2 = archivo.readline()
-    print(f"Primera línea: {linea1.strip()}") # .strip() quita los saltos de línea
+    print(f"Primera línea: {linea1.strip()}")  # .strip() quita los saltos de línea
     print(f"Segunda línea: {linea2.strip()}")
 
 print("\n--- Leyendo todas las líneas en una lista con .readlines() ---")
@@ -45,13 +41,13 @@ with open("lista_compras.txt", "r") as archivo:
     for numero_linea, linea in enumerate(archivo, 1):
         print(f"Línea {numero_linea}: {linea.strip()}")
 
-#Example 2
+# Example 2
 # Escribir en un archivo .txt
-with open('registro_sena.txt', 'w', encoding='utf-8') as archivo:
+with open("registro_sena.txt", "w", encoding="utf-8") as archivo:
     archivo.write("Línea 1: Inicio de registro.\n")
     archivo.write("Línea 2: Proceso completado.\n")
 
 # Leer el contenido de un archivo .txt
-with open('registro_sena.txt', 'r', encoding='utf-8') as archivo:
+with open("registro_sena.txt", "r", encoding="utf-8") as archivo:
     for linea in archivo:
-        print(linea.strip()) # .strip() elimina saltos de línea y espacios
+        print(linea.strip())  # .strip() elimina saltos de línea y espacios

@@ -33,7 +33,7 @@ instructor_dict = {
     "profesion": "Ingeniero de Sistemas",
     "rol": "Instructor SENA",
     "tecnologias": ["Python", "Java", "SQL"],
-    "activo": True
+    "activo": True,
 }
 
 # 2. Usamos json.dumps() para "volcar el diccionario a un string"

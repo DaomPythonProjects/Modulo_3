@@ -1,0 +1,15 @@
+{
+    "nombre": "Análisis y Desarrollo de Software (ADSO)",
+    "ficha": 2556080,
+    "activo": true,
+    "aprendices": [
+        {
+            "nombre": "Ana",
+            "promedio": 4.5
+        },
+        {
+            "nombre": "Luis",
+            "promedio": 4.2
+        }
+    ]
+}

@@ -14,6 +14,7 @@ dependencies = [
     "pytest>=8.4.2",
     "pytest-mock>=3.15.0",
     "rich>=14.1.0",
+    "ruff>=0.13.0",
 ]
 [project.urls]
 homepage = "https://github.com/DaomPythonProjects/Modulo_3"
@@ -43,3 +44,45 @@ markers = [
     "slow: marca las pruebas que tardan mucho en ejecutarse",
     "integration: marca las pruebas de integración"
 ]
+
+[tool.ruff]
+# Define la versión mínima de Python que tu código soporta.
+# Ayuda a ruff a aplicar reglas específicas de cada versión.
+target-version = "py310" # Cambia esto a tu versión de Python
+
+[tool.ruff.lint]
+# 'select' activa un conjunto de reglas.
+# E = Errores de pycodestyle
+# F = Errores de PyFlakes (lógica)
+# I = Reglas para ordenar imports (isort)
+# W = Advertencias de pycodestyle
+# PLC = Convenciones de Pylint
+# PLR = Refactorizaciones de Pylint
+
+# En Ruff, las reglas que aplican el estándar PEP 8
+# se activan principalmente con los códigos E y W,
+# que provienen de la herramienta pycodestyle.
+
+select = ["E", "F", "I", "W", "PLC", "PLR"]
+
+# 'ignore' desactiva reglas específicas si son muy molestas.
+# Por ejemplo, 'E501' es la regla de "línea demasiado larga".
+ignore = []
+
+# Puedes añadir aquí reglas que no se puedan arreglar automáticamente.
+unfixable = []
+
+[tool.ruff.format]
+# Configuración del formateador (opcional, pero recomendado).
+# Puedes elegir un estilo de comillas o dejar que ruff decida.
+quote-style = "double"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.0",
+]
+
+[tool.ruff.lint.pydocstyle]
+# Obliga a que todos los métodos y funciones PÚBLICOS tengan un docstring.
+# No lo exige para métodos privados que empiezan con '_'.
+convention = "google" # Puedes elegir entre "google", "numpy", o "pep257"
