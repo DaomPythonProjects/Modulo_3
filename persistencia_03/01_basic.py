@@ -58,6 +58,7 @@ lineas_a_escribir = ["Manzanas\n", "Peras\n", "Naranjas\n"]
 file_lista = "lista_compras.txt"
 
 if os.path.exists(file_lista):
+    # pathlib.Path(file_lista).touch()  # Crea el archivo si no existe
     with open(file_lista, "a", encoding="utf-8") as archivo:
         archivo.write("Nuevo Elemento\n")
 
