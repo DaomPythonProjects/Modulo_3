@@ -18,4 +18,5 @@ with open("programa.json", "w", encoding="utf-8") as f:
 # Leer un archivo JSON y convertirlo en un diccionario de Python
 with open("programa.json", "r", encoding="utf-8") as f:
     data = json.load(f)
-    print(f"El programa se llama: {data['nombre']}")
+    print(type(data))
+    print(f"El primer aprendiz es: {data['aprendices'][0]['nombre']}")
