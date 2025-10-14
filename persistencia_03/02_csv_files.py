@@ -1,21 +1,29 @@
 import csv
 
+import pandas as pd
+import tabulate
+
+lista_aprendices = [
+    ["nombre", "programa", "ficha"],
+    ["Ana", "ADSO", "2556080"],
+    ["Luis", "Sistemas", "2458091"],
+]
+
 # Escribir en un archivo CSV
 with open("aprendices.csv", "w", newline="", encoding="utf-8") as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(["nombre", "programa", "ficha"])
-    writer.writerow(["Ana", "ADSO", "2556080"])
-    writer.writerow(["Luis", "Sistemas", "2458091"])
+    for aprendiz in lista_aprendices:
+        writer.writerow(aprendiz)
 
 # Leer un archivo CSV como diccionarios
 with open("aprendices.csv", "r", encoding="utf-8") as csvfile:
     reader = csv.DictReader(csvfile)
-    for row in reader:
-        print(f"{row['nombre']} está en la ficha {row['ficha']}.")
-
+    print(tabulate(reader, headers="keys"))
+    # for row in reader:
+    #     print(f"{row['nombre']} está en la ficha {row['ficha']}, Programa {row['programa']}")
+    #
 
 # Se requiere instalar: pip install pandas
-import pandas as pd
 
 # Leer un CSV con una sola línea es muy fácil
 df = pd.read_csv("aprendices.csv")
